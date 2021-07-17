@@ -19,12 +19,12 @@ def parse_cin():
 def download_webpage(cin):
     try:
         URL = 'https://www.quickcompany.in/company/autocomplete?term=' + cin
-        response = requests.get(URL).json()
+        response = requests.get(URL)
         
         if response.status_code != 200:
             raise Exception('Cannot fetch webpage!')
             
-        print(json.dumps(response))
+        print(json.dumps(response.json()))
             
 #         webpage = response.content
 #         extract_content(webpage)
